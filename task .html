@@ -10,7 +10,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">✨ ShineBright</div>
+                <div class="logo"> ShineBright</div>
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -72,69 +72,71 @@
 
             <div class="collection-grid" id="collection-grid">
                 <div class="collection-item" data-metal="gold" data-weight="medium" data-price="luxury">
-                    <div class="collection-image gold"></div>
+                    <div class="collection-image gold" onclick="openGallery('gold')"></div>
                     <div class="collection-content">
                         <h3>Gold Elegance</h3>
                         <p>Timeless 18K gold jewelry featuring classic designs and modern sophistication. Each piece is carefully crafted to perfection.</p>
-                        <button class="view-collection" onclick="viewCollection('gold')">View Collection</button>
+                        <button class="view-collection" onclick="openGallery('gold')">View Collection</button>
                     </div>
                 </div>
 
                 <div class="collection-item" data-metal="silver" data-weight="light" data-price="mid">
-                    <div class="collection-image silver"></div>
+                    <div class="collection-image silver" onclick="openGallery('silver')"></div>
                     <div class="collection-content">
                         <h3>Silver Serenity</h3>
                         <p>Contemporary sterling silver pieces that blend elegance with everyday wearability. Perfect for any occasion.</p>
-                        <button class="view-collection" onclick="viewCollection('silver')">View Collection</button>
+                        <button class="view-collection" onclick="openGallery('silver')">View Collection</button>
                     </div>
                 </div>
 
                 <div class="collection-item" data-metal="gemstone" data-weight="heavy" data-price="luxury">
-                    <div class="collection-image gemstone"></div>
+                    <div class="collection-image gemstone" onclick="openGallery('gemstone')"></div>
                     <div class="collection-content">
                         <h3>Gemstone Glory</h3>
                         <p>Exquisite gemstone jewelry featuring rare diamonds, emeralds, rubies, and sapphires in stunning settings.</p>
-                        <button class="view-collection" onclick="viewCollection('gemstone')">View Collection</button>
+                        <button class="view-collection" onclick="openGallery('gemstone')">View Collection</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="video-section">
-        <div class="container">
-            <h2 class="section-title">Product Showcase</h2>
-            <div class="video-grid">
-                <div class="video-item">
-                    <div class="video-placeholder">▶️</div>
-                    <h3>Gold Ring Craftsmanship</h3>
-                    <p>Watch our master jewelers create stunning gold rings</p>
+    <!-- FIXED: Added the missing modal structure -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Collection</h2>
+                <span class="close" onclick="closeGallery()">&times;</span>
+            </div>
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+     <div class="video-item">
+                <h1>Gold Ring Craftsmanship</h1>
+                    <iframe width="100%" height="600" src="https://www.youtube.com/embed/aA9byVZSfxI" 
+                            title="Gold Ring Craftsmanship" allowfullscreen>
+                    </iframe>
+                  <p>Watch our master jewelers create stunning gold rings</p>  
                 </div>
                 <div class="video-item">
-                    <div class="video-placeholder">▶️</div>
-                    <h3>Diamond Setting Process</h3>
+                    <h1>Diamond Setting Process</h1>
+                    <iframe width="100%" height="600" src="https://www.youtube.com/embed/kYOP52BUZTI" 
+                            title="Diamond Setting Process" allowfullscreen>
+                    </iframe>
                     <p>See how we carefully set each precious diamond</p>
                 </div>
                 <div class="video-item">
-                    <div class="video-placeholder">▶️</div>
-                    <h3>Silver Collection Tour</h3>
-                    <p>Explore our complete silver jewelry collection</p>
+                    <h1>Silver Collection Tour</h1>
+                    <iframe width="100%" height="600" src="https://www.youtube.com/embed/8EPFqerB6qU" 
+                            title="Silver Collection Tour" allowfullscreen>
+                    </iframe>
+                     <p>Explore our complete silver jewelry collection</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="virtual-tryon" id="virtual-tryon">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Virtual Try-On Experience</h2>
-            <div class="tryon-simulator">
-                <h3>See How It Looks On You</h3>
-                <p>Use our advanced AR technology to try on jewelry virtually before you buy</p>
-                <button class="simulate-btn" onclick="startTryOn()">Start Virtual Try-On</button>
-                <div id="tryon-status" style="margin-top: 1rem; font-style: italic;"></div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -142,15 +144,15 @@
             <div class="testimonial-grid">
                 <div class="testimonial">
                     <p class="testimonial-text">The quality of ShineBright jewelry is absolutely exceptional. My engagement ring is stunning and gets compliments everywhere I go!</p>
-                    <p class="testimonial-author">- Sarah M.</p>
+                    <p class="testimonial-author">- Hanu Reddy M.</p>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">I've purchased several pieces from ShineBright. The craftsmanship is outstanding and the customer service is top-notch.</p>
-                    <p class="testimonial-author">- Michael R.</p>
+                    <p class="testimonial-author">- Asha Naidu R.</p>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">The virtual try-on feature helped me choose the perfect necklace. It arrived exactly as expected - beautiful and well-packaged.</p>
-                    <p class="testimonial-author">- Emma K.</p>
+                    <p class="testimonial-author">- Shudhi Ayodhya K.</p>
                 </div>
             </div>
         </div>
@@ -160,12 +162,14 @@
         <div class="container">
             <h2 style="margin-bottom: 1rem;">Secure Payment Options</h2>
             <p>Your transactions are protected with industry-leading security</p>
+
             <div class="payment-icons">
-                <div class="payment-icon">💳 Visa</div>
-                <div class="payment-icon">💳 MasterCard</div>
-                <div class="payment-icon">🅿️ PayPal</div>
-                <div class="payment-icon">🍎 Apple Pay</div>
-                <div class="payment-icon">🔒 SSL Secure</div>
+                <div class="payment-icons" style="grid-column: 1;">💳 Visa</div>
+                <div class="payment-icons" style="grid-column: 2;">💳 MasterCard</div>
+                <div class="payment-icons" style="grid-column: 3;">🅿️ PayPal</div>
+                <div class="payment-icons" style="grid-column: 4;">📱 PhonePe</div>
+                <div class="payment-icons" style="grid-column: 5;">📲 GPay</div>
+                <div class="payment-icons" style="grid-column: 6;">💰 Paytm</div>
             </div>
         </div>
     </section>
@@ -176,8 +180,8 @@
                 <div class="footer-section">
                     <h3>Contact Us</h3>
                     <p>📧 info@shinebright.com</p>
-                    <p>📞 1-800-SHINE-NOW</p>
-                    <p>📍 123 Jewelry Lane, Luxury City</p>
+                    <p>📞 +91 9701023462</p>
+                    <p>📍 Madanapalle,Andhra Pradesh</p>
                 </div>
                 <div class="footer-section">
                     <h3>Customer Care</h3>
@@ -198,6 +202,6 @@
         </div>
     </footer>
 
-    <script src=task.js"></script>
+    <script src="task.js"></script>
 </body>
 </html>
